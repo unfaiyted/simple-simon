@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+
+html, body {
+    background-color: #979B8A;
+    background-image: url("../images/bg.png");
+}
+
+.simon-center {
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+.simon-game {
+    width: 620px;
+    min-width: 620px;
+    max-width: 620px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.full-circle {
+    border: 30px solid black; /* the 'strokes' of the arc */
+    border-radius: 0 0 0 100%; /* depend on width */
+    background-color: #E8C336;
+    -webkit-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
+}
+
+.semi-circle {
+    width:300px;
+    min-height: 300px;
+    margin:0;
+    padding:0;
+    display: inline-block;
+    float: left;
+    border-color: black;
+
+}
+
+.countdown {
+    width: 100%;
+    height: 100%;
+        font-size: 120px;
+    position: absolute;
+    text-shadow: 1px 1px 25px rgba(0, 0, 0, 1);
+    color: #fff;
+    z-index: 100;
+    text-align: center;
+    padding-top: 230px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+.btn-disabled {
+    background-color: red;
+}
+
+.hide {
+    display: none;
+}
+
+.light {
+      -webkit-box-shadow: inset 3px 6px 144px -10px rgba(255,255,255,1);
+      -moz-box-shadow: inset 3px 6px 144px -10px rgba(255,255,255,1);
+      box-shadow: inset 3px 6px 144px -10px rgba(255,255,255,1);
+  }
+
+.dark {
+    -webkit-box-shadow: inset -8px 0px 157px -28px rgba(0,0,0,1);
+    -moz-box-shadow: inset -8px 0px 157px -28px rgba(0,0,0,1);
+    box-shadow: inset -8px 0px 157px -28px rgba(0,0,0,1);
+}
+
+.small {
+    font-size: 20px;
+}
+
+.half {
+    width: 50%;
+    text-align: center;
+}
+
+.simon-text {
+    font-family: 'Rammetto One', cursive;
+    font-size: 50px;
+    color: #fff;
+    margin-top: 0px;
+    text-align: center;
+
+
+}
+
+#simon-counter {
+    background-color: #C0CC9C;
+    border: 2px solid #979B8A;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#start-btn {
+    width: 25px;
+    height: 25px;
+   background-color:  #55B534;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#center-circle {
+    width: 250px;
+    height: 250px;
+    background: black;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+#green {
+    border: 30px solid black; /* the 'strokes' of the arc */
+    border-radius: 100% 0 0 0; /* depend on width */
+    background-color: #5CC55F;
+
+}
+
+#red {
+    border: 30px solid black; /* the 'strokes' of the arc */
+    border-radius: 0 100% 0 0; /* depend on width */
+    background-color: #EB3D39;
+}
+
+
+
+#yellow {
+    border: 30px solid black; /* the 'strokes' of the arc */
+    border-radius: 0 0 0 100%; /* depend on width */
+    background-color: #E8C336;
+
+}
+
+#blue {
+    border: 30px solid black; /* the 'strokes' of the arc */
+    border-radius: 0 0 100% 0; /* depend on width */
+    background-color: #0867C6;
+
+}
