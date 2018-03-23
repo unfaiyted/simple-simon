@@ -7,6 +7,8 @@ var currentRound = 0;
 var roundActive = false;
 var gameStart = false;
 var lastRound  = 0;
+var userScore = 0;
+var lastRoundScore = 0;
 
 $('.semi-circle').hover(function () {
     if(roundActive === true || gameStart === false) { $(this).addClass('light'); }
@@ -28,9 +30,12 @@ $('.semi-circle').click(function () {
 
     if(roundActive === true) {
         userArray.push($(this).prop('id'));
+        userScore += 10;
+        scoreBoardUpdate();
     }
 
     if (userArray.length ===  simonArray.length && roundActive === true) {
+        scoreBoardUpdate();
         (userArray.toString() === simonArray.toString()) ? nextLevel() : gameOver() ;
     }
 
@@ -43,7 +48,8 @@ $('#addScore').click(function () {
     //if yes -> add entry
     var score = {
         initials: $('#initials').val(),
-        score:  lastRound
+        round:  lastRound,
+        score: lastRoundScore
     };
 
     if(localStorage.getItem('scores') === null) {
@@ -101,6 +107,11 @@ function nextLevel() {
 
     $.playSound("se/round-up.mp3");
 
+    if(currentRound !== 0) {
+        userScore+= 100;
+    }
+    scoreBoardUpdate();
+
     currentRound++;
     roundActive = false;
     userArray = [];
@@ -154,7 +165,7 @@ function nextLevel() {
             roundActive = true;
             clearTimeout(timer);
         }
-    }, 1250);
+    }, 900);
 
 }
 
@@ -167,7 +178,6 @@ $('#retry').click(function () {
 });
 
 function refreshScores() {
-
 
     if(localStorage.getItem('scores') !== null) {
         var data = JSON.parse(localStorage.getItem('scores'));
@@ -211,13 +221,42 @@ function gameOver() {
     userArray = [];
     simonArray = [];
     lastRound = currentRound;
+    lastRoundScore = userScore;
     currentRound = 0;
+    userScore = 0;
     gameStart = false;
     $('#gameOver').removeClass('hide');
 };
 
 
+function topScore() {
 
+    if(localStorage.getItem('scores') !== null) {
+        var data = JSON.parse(localStorage.getItem('scores'));
+
+        data.sort(function (a, b) {
+            return a.score < b.score ? 1 : -1;
+        });
+        return data[0].score
+    } else {
+        return 0;
+    }
+
+}
+
+function scoreBoardUpdate() {
+    var current = userScore;
+    var top = topScore();
+
+    var userHeight = (current <= top) ? parseFloat(current)/parseFloat(top) : 1;
+    var negativeHeight = 1 - userHeight;
+    $('.negativeScore').css('height', negativeHeight*100 + '%');
+    $('.currentScore').css('height',userHeight*100 + '%');
+
+    $('.negativeScore').text(top);
+    $('.currScoreTxt').text(current);
+
+}
 
 
 
