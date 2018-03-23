@@ -20,12 +20,15 @@ html, body {
 }
 
 .full-circle {
-    border: 30px solid black; /* the 'strokes' of the arc */
-    border-radius: 0 0 0 100%; /* depend on width */
+    width: 620px;
+    min-height: 620px;
+    border: 10px solid black; /* the 'strokes' of the arc */
+    border-radius: 100% 100% 100% 100%; /* depend on width */
     background-color: #E8C336;
     -webkit-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
+    position: relative;
 }
 
 .semi-circle {
@@ -66,7 +69,7 @@ html, body {
     color: #fff;
     z-index: 100;
     text-align: center;
-    padding-top: 180px;
+    padding-top: 100px;
 
     background-color: rgba(0, 0, 0, 0.85);
 
