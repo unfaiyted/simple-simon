@@ -17,6 +17,9 @@ $('.semi-circle').click(function () {
 
     $(this).removeClass('light');
     $(this).addClass('dark');
+    $.playSound("se/button-press1.mp3");
+
+    console.log('playing');
 
     setTimeout(function() {
         $('.semi-circle').removeClass('dark');
@@ -29,7 +32,7 @@ $('.semi-circle').click(function () {
 
     if (userArray.length ===  simonArray.length && roundActive === true) {
         console.log('compare arrays');
-
+        $.playSound("se/round-up.mp3");
         (userArray.toString() === simonArray.toString()) ? nextLevel() : gameOver() ;
     }
 
@@ -67,7 +70,6 @@ $('#start-btn').click(function () {
 });
 
 
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -88,32 +90,39 @@ function nextLevel() {
         var randomInt = getRandomInt(1,4);
         if(intervalCount <= currentRound) {
 
-            if(simonArray.length < intervalCount) {
+            if(simonArray.length <= intervalCount) {
                 switch (randomInt) {
                     case 1:
                         simonArray.push('red');
                         $('#red').addClass('light');
+                        $.playSound("se/button-press1.mp3");
 
                         break;
                     case 2:
                         simonArray.push('green');
                         $('#green').addClass('light');
+                        $.playSound("se/button-press1.mp3");
                         break;
                     case 3:
                         simonArray.push('blue');
                         $('#blue').addClass('light');
+                        $.playSound("se/button-press1.mp3");
                         break;
                     case 4:
                         simonArray.push('yellow');
                         $('#yellow').addClass('light');
+                        $.playSound("se/button-press1.mp3");
                         break;
                 }
             } else {
                 $('#' + simonArray[intervalCount]).addClass('light');
+                $.playSound("se/button-press1.mp3");
             }
 
-            setTimeout(function() {
+
+            var lightTimer = setTimeout(function() {
                 $('.semi-circle').removeClass('light');
+                clearTimeout(lightTimer);
             }, 400);
 
 
@@ -124,8 +133,6 @@ function nextLevel() {
         }
 
     }, 1250);
-
-
 
 }
 
@@ -144,7 +151,7 @@ function gameOver() {
 
     $('#go-score').text($('#simon-counter').text());
 
-
+    // resetting values
     roundActive = false;
     userArray = [];
     simonArray = [];
