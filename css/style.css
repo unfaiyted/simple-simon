@@ -3,12 +3,15 @@
 html, body {
     background-color: #979B8A;
     background-image: url("../images/bg.png");
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .simon-center {
     -webkit-box-align:center;
     -webkit-box-pack:center;
     display:-webkit-box;
+    min-height: calc(100vh - 50px);
 }
 
 .simon-game {
@@ -39,6 +42,7 @@ html, body {
     display: inline-block;
     float: left;
     border-color: black;
+    cursor: url('../images/hand.png'), pointer;
 
 }
 
@@ -164,7 +168,7 @@ html, body {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: absolute;
-    top: 220px;
+    top: calc(33vh);
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
@@ -198,3 +202,35 @@ html, body {
     background-color: #0867C6;
 
 }
+
+footer {
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.3);
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.15;
+    color: #fff;
+    padding-top: 14px;
+    display: flex;
+    list-style: none;
+}
+
+footer p, footer i, footer a {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+footer .left {
+    justify-content: flex-end;
+
+}
+
+footer .right {
+ justify-content: flex-start;
+    margin-left: auto;
+}
+
