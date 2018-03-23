@@ -70,7 +70,7 @@ $('#addScore').click(function () {
 $('#start-btn').click(function () {
 
     $('#start-btn').prop('disabled', true);
-    $('#start-btn').css('background-color','red');
+    $('#start-btn').removeClass('led-green').addClass('led-red');
     gameStart = true;
 
     var timer = setInterval(function(){
