@@ -20,6 +20,7 @@ html, body {
     -webkit-box-pack:center;
     display:-webkit-box;
     min-height: calc(100vh - 50px);
+    
 }
 
 .simon-game {
@@ -28,6 +29,7 @@ html, body {
     max-width: 620px;
     padding-top: 40px;
     position: relative;
+
 }
 
 .full-circle {
@@ -51,6 +53,7 @@ html, body {
     float: left;
     border-color: black;
     cursor: url('../images/hand.png'), pointer;
+
 
 }
 

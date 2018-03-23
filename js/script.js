@@ -171,7 +171,7 @@ function nextLevel() {
 
 $('#retry').click(function () {
     $('#start-btn').prop('disabled', false);
-    $('#start-btn').css('background-color','green');
+    $('#start-btn').removeClass('led-red').addClass('led-green');
     $('#simon-counter').text("0");
     $('#gameOver').addClass('hide');
 
