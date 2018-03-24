@@ -71,7 +71,14 @@ $('#start-btn').click(function () {
 
     $('#start-btn').prop('disabled', true);
     $('#start-btn').removeClass('led-green').addClass('led-red');
+    $.playSound("se/beep.mp3");
     gameStart = true;
+
+
+    setTimeout(function () {
+        $.playSound("se/3-2-1.mp3");
+    }, 1100);
+
 
     var timer = setInterval(function(){
         $('#cdTimer').removeClass('hide');
@@ -80,7 +87,8 @@ $('#start-btn').click(function () {
             {
 
                 if (parseInt(html) === 1) {
-                    return "START";
+                    $.playSound("se/ready.wav");
+                    return "READY";
                 }
                 return parseInt(html)-1;
             }
@@ -152,6 +160,9 @@ function nextLevel() {
             } else {
                 $('#' + simonArray[intervalCount]).addClass('light');
                 $.playSound("se/button-press1.mp3");
+
+
+
             }
 
 
@@ -163,6 +174,7 @@ function nextLevel() {
             intervalCount++;
         } else {
             roundActive = true;
+                $.playSound("se/done.wav");
             clearTimeout(timer);
         }
     }, 900);
