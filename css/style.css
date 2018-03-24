@@ -37,7 +37,7 @@ html, body {
     min-height: 620px;
     border: 10px solid black; /* the 'strokes' of the arc */
     border-radius: 100% 100% 100% 100%; /* depend on width */
-    background-color: #E8C336;
+    background-color: #000;
     -webkit-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 18px 58px 0px rgba(0,0,0,0.75);
@@ -121,22 +121,18 @@ html, body {
 
 }
 
-
-
 .negativeScore {
   height:100%;
     background-color: #979B8A;
     color: #000;
     text-align: center;
-
-
 }
+
 .currentScore {
     background-color: forestgreen;
     height: 0%;
     text-align: center;
     vertical-align: center;
-
 }
 
 .gameover .table {
@@ -144,7 +140,6 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .gameover input {
     font-size: 50px;
@@ -223,10 +218,16 @@ html, body {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: absolute;
-    top: calc(33vh);
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%)
+    /*top: calc(35vh);*/
+    /*left: 50%;*/
+    /*-webkit-transform: translateX(-50%);*/
+    /*transform: translateX(-50%)*/
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: calc(50% - 125px);
+    /*}*/
 }
 
 #green {
