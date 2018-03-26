@@ -161,8 +161,6 @@ function nextLevel() {
                 $('#' + simonArray[intervalCount]).addClass('light');
                 $.playSound("se/button-press1.mp3");
 
-
-
             }
 
 
@@ -179,9 +177,9 @@ function nextLevel() {
         }
     }, 900);
 
-}
+    }
 
-$('#retry').click(function () {
+    $('#retry').click(function () {
     $('#start-btn').prop('disabled', false);
     $('#start-btn').removeClass('led-red').addClass('led-green');
     $('#simon-counter').text("0");
